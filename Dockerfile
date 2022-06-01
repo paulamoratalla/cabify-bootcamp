@@ -2,7 +2,7 @@ FROM node:latest
 
 EXPOSE 9001
 
-COPY ./exercise01/messageapp ./
+COPY . ./
 
 RUN echo "running"
 
