@@ -1,32 +1,15 @@
-# Documentation
+# Exercise 3 solution
 
-## Contract
+## Getting started
 
-### Errors
----
+We are now adding a persistence layer, in our case MongoDB.
 
-Route error `Error 404`
+Al the source code can be found under `/src` folder with models controllers and database connection
 
-Missing both keys `Error 405`
+To check results we can run:
 
-Missing a key `Error 405`
+1) run messageapp with `npm run docker` on port 3000
+2) run a local app with `npm run app` on port 9001
+3) or run both servers in one command `npm run start:all`
 
-Server error `Error 500`
-
-### Success
----
-
-Both keys complete `success 200`
-
-Key value = empty string `success 200`
-
-If you want to check the Postman collection tests you can click
-[here](Test-cabify.postman_collection.json) 
-
-
-## Endpoint routes
-
-| Method | URL | Description |
-|-------------|-------------|-------------|
-| POST | /messages | Creating new messages in the system |
-| GET | /messages | Getting the messages in the system |
+You can run `./curl_requests.sh` to run some curl into the app and see results.
