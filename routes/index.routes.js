@@ -5,7 +5,7 @@ const MongodbService = require("../services/mongodb.service");
 const Message = require("./../models/Message.model")
 
 router.post("/messages", (req, res, next) => {
-  console.log("Hello")
+
   const { destination, body, number } = req.body
 
   if (!destination && !body && !number) {
@@ -53,7 +53,6 @@ router.post("/messages", (req, res, next) => {
   }
 })
 
-
 router.get('/messages', (req, res, next) => {
 
   Message
@@ -62,57 +61,4 @@ router.get('/messages', (req, res, next) => {
     .catch(err => res.status(500).json(err))
 })
 
-
 module.exports = router;
-
-// const router = require("express").Router();
-// const messagesService = require("../services/message.service")
-// const Message = require("./../models/Message.model")
-
-// router.post("/messages", (req, res, next) => {
-
-//   const { destination, body, number } = req.body
-
-//   if (!destination && !body && !number) {
-//     return res
-//       .status(400)
-//       .json({
-//         message:
-//           "The keys can't be empty. The necessary keys are destination, body and number",
-//       });
-//   }
-//   else if (!destination) {
-//     return res.status(400).json({
-//       message:
-//         "The key destination must exist. The necessary keys are destination, body and number",
-//     });
-//   }
-//   else if (!body) {
-//     return res
-//       .status(400)
-//       .json({
-//         message:
-//           "The key body must exist. The necessary keys are destination, body and number",
-//       });
-//   }
-//   else if (!number) {
-//     return res
-//       .status(400)
-//       .json({
-//         message:
-//           "The key number must exist. The necessary keys are destination, body and number",
-//       });
-//   }
-//   else {
-//     messagesService
-//       .sendMessage({ destination, body })
-//       .then(() => {
-//         return Message.create({ destination, body, number })
-//       })
-//       .then((newMessage) => res.json(newMessage))
-//       .catch((err) => {
-
-//         res.status(500).json(err)
-//       })
-//   }
-// })

@@ -9,6 +9,8 @@ services:
     ports:
       - "3000:3000"
   mongodb:
+    depends_on: 
+      - messageapp
     image: mongo
     volumes:
       - ./data/db:/data/db
