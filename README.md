@@ -28,4 +28,5 @@ If you want to check the Postman collection tests you can click
 
 | Method | URL | Description |
 |-------------|-------------|-------------|
-| POST | /messages | Creating new eaters in the system |
+| POST | /messages | Creating new messages in the system |
+| GET | /messages | Getting the messages in the system |

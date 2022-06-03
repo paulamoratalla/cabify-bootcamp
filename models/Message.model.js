@@ -14,9 +14,8 @@ const messageSchema = new Schema(
         },
         number: {
             type: Number,
-            // unique: true,
-            // required: [true, "Number is required"],
-            // trim: true
+            required: [true, "Number is required"],
+            trim: true
         },
     },
     {
